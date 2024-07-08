@@ -50,6 +50,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
 }
 .bubble {
   width: 40px;
@@ -71,7 +72,8 @@ h1 {
   font-size: 5vw;
   color: red;
 }
-#start-btn {
+#start-btn,
+#new-game-btn {
   padding: 1rem;
   background-color: rgb(42, 147, 151);
   color: #fff;
