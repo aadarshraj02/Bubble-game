@@ -1,11 +1,14 @@
 let clutter = "";
+var hitRandom = 0;
+let timer = 2;
 
-for (let i = 1; i <= 147; i++) {
-  clutter += `<div class="bubble">${Math.floor(Math.random() * 10)}</div>`;
+function makeBubble() {
+  for (let i = 1; i <= 168; i++) {
+    clutter += `<div class="bubble">${Math.floor(Math.random() * 10)}</div>`;
+  }
+  document.querySelector("#p-bottom").innerHTML = clutter;
 }
-document.querySelector("#p-bottom").innerHTML = clutter;
 
-let timer = 60;
 function runTimer() {
   var time = setInterval(() => {
     if (timer > 0) {
@@ -13,13 +16,14 @@ function runTimer() {
       document.querySelector("#timer-val").innerHTML = timer;
     } else {
       clearInterval(time);
+      document.querySelector("#p-bottom").innerHTML = `<h1>${score}</h1>`;
     }
   }, 1000);
 }
 
 function getNewHit() {
-  random = Math.floor(Math.random() * 10);
-  document.querySelector("#hit-val").innerHTML = random;
+  hitRandom = Math.floor(Math.random() * 10);
+  document.querySelector("#hit-val").textContent = hitRandom;
 }
 
 var score = 0;
@@ -28,5 +32,14 @@ function increaseScore() {
   document.querySelector("#score-val").innerHTML = score;
 }
 
+document.querySelector("#p-bottom").addEventListener("click", (details) => {
+  let clicked = Number(details.target.textContent);
+  if (clicked === hitRandom) {
+    increaseScore();
+    getNewHit();
+    makeBubble();
+  }
+});
+makeBubble();
 getNewHit();
 runTimer();
