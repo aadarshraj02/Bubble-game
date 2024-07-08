@@ -16,7 +16,9 @@ function runTimer() {
       document.querySelector("#timer-val").innerHTML = timer;
     } else {
       clearInterval(time);
-      document.querySelector("#p-bottom").innerHTML = `<h1>${score}</h1>`;
+      document.querySelector(
+        "#p-bottom"
+      ).innerHTML = `Game Over Your Score : <h1>${score}</h1>`;
     }
   }, 1000);
 }
