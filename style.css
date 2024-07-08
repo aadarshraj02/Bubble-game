@@ -48,6 +48,8 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 .bubble {
   width: 40px;
@@ -63,4 +65,9 @@
   cursor: pointer;
   background-color: rgb(8, 80, 82);
   transition: all ease 1s;
+}
+h1 {
+  text-align: center;
+  font-size: 5vw;
+  color: red;
 }
