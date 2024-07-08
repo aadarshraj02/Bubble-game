@@ -1,8 +1,9 @@
-let clutter = "";
+
 var hitRandom = 0;
 let timer = 60;
 
 function makeBubble() {
+  let clutter = "";
   for (let i = 1; i <= 168; i++) {
     clutter += `<div class="bubble">${Math.floor(Math.random() * 10)}</div>`;
   }
