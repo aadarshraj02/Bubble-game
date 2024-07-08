@@ -22,6 +22,11 @@ function getNewHit() {
   document.querySelector("#hit-val").innerHTML = random;
 }
 
-getNewHit();
+var score = 0;
+function increaseScore() {
+  score += 10;
+  document.querySelector("#score-val").innerHTML = score;
+}
 
+getNewHit();
 runTimer();
