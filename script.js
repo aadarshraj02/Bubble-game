@@ -1,4 +1,3 @@
-
 var hitRandom = 0;
 let timer = 60;
 
@@ -34,6 +33,15 @@ function increaseScore() {
   score += 10;
   document.querySelector("#score-val").innerHTML = score;
 }
+document.querySelector("#start-btn").addEventListener("click", () => {
+  score = 0;
+  timer = 60;
+  document.querySelector("#score-val").innerHTML = score;
+  document.querySelector("#timer-val").innerHTML = timer;
+  makeBubble();
+  getNewHit();
+  runTimer();
+});
 
 document.querySelector("#p-bottom").addEventListener("click", (details) => {
   let clicked = Number(details.target.textContent);
@@ -43,6 +51,6 @@ document.querySelector("#p-bottom").addEventListener("click", (details) => {
     makeBubble();
   }
 });
-makeBubble();
-getNewHit();
-runTimer();
+// makeBubble();
+// getNewHit();
+// runTimer();
