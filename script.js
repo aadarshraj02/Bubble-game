@@ -18,7 +18,12 @@ function runTimer() {
       clearInterval(time);
       document.querySelector(
         "#p-bottom"
-      ).innerHTML = `Game Over Your Score : <h1>${score}</h1>`;
+      ).innerHTML = `Game Over Your Score : <h1>${score}</h1>
+       <button id="new-game-btn">New Game</button>
+      `;
+      document
+        .querySelector("#new-game-btn")
+        .addEventListener("click", startGame);
     }
   }, 1000);
 }
@@ -33,7 +38,7 @@ function increaseScore() {
   score += 10;
   document.querySelector("#score-val").innerHTML = score;
 }
-document.querySelector("#start-btn").addEventListener("click", () => {
+function startGame() {
   score = 0;
   timer = 60;
   document.querySelector("#score-val").innerHTML = score;
@@ -41,7 +46,8 @@ document.querySelector("#start-btn").addEventListener("click", () => {
   makeBubble();
   getNewHit();
   runTimer();
-});
+}
+document.querySelector("#start-btn").addEventListener("click", startGame);
 
 document.querySelector("#p-bottom").addEventListener("click", (details) => {
   let clicked = Number(details.target.textContent);
