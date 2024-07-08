@@ -16,4 +16,10 @@
   height: 85%;
   background-color: #fff;
   border-radius: 10px;
+  overflow: hidden;
+}
+#p-top {
+  width: 100%;
+  height: 100px;
+  background-color: rgb(42, 147, 151);
 }
