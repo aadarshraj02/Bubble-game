@@ -1,6 +1,6 @@
 let clutter = "";
 var hitRandom = 0;
-let timer = 2;
+let timer = 60;
 
 function makeBubble() {
   for (let i = 1; i <= 168; i++) {
