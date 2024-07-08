@@ -17,4 +17,11 @@ function runTimer() {
   }, 1000);
 }
 
+function getNewHit() {
+  random = Math.floor(Math.random() * 10);
+  document.querySelector("#hit-val").innerHTML = random;
+}
+
+getNewHit();
+
 runTimer();
